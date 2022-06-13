@@ -22,10 +22,20 @@ public class Statistics extends JFrame {
             int max = Arrays.stream(times).max().getAsInt();
             for (int i = 0; i < times.length; i++) {
                 double temp = (double) times[i] / (double) max * 200.0;
-                String color = temp == 0 ? "#C0C0C0" : "#618C55";
-                String align = temp == 0 ? "center" : "right";
-                String space = temp == 0 ? "" : "&nbsp&nbsp";
-                temp = temp == 0 ? 15 : temp;
+                String color;
+                String align;
+                String space;
+
+                if (temp <= 15) {
+                    color = temp == 0 ? "#C0C0C0" : "#618C55";
+                    align = "center";
+                    space = "";
+                    temp = 15;
+                } else {
+                    color = "#618C55";
+                    align = "right";
+                    space = "&nbsp&nbsp";
+                }
                 distribution += "<span>" + (i + 1) + "</span><div style=\"background-color: " + color + "; width: "
                         + temp + "px; height: 10px; text-align: " + align + "\">" + times[i] + space + "</div>";
             }
