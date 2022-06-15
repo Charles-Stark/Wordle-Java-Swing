@@ -21,14 +21,14 @@ public class Bar extends JMenuBar {
         // 菜单一_玩法介绍
         JMenuItem how_to = new JMenuItem("玩法介绍");
 
-        how_to.addActionListener(e -> {
+        how_to.addActionListener(e -> EventQueue.invokeLater(() -> {
             // 弹出玩法提示框
             JOptionPane.showMessageDialog(null, "<html><div>在6次尝试中猜出单词</div><div>每次尝" +
                             "试请输入一个存在的且由5个字母组成的单词，然后按下回车键</div><div>每次尝试后，方格的颜色会提示猜得有多" +
                             "接近</div><div style=\"color:#618C55;\"><b>绿色</b>：该字母已位于正确位置</div><div style=\"" +
                             "color:#B1A04C;\"><b>黄色</b>：该字母存在于答案单词中，但位置不对</div><div style=\"color:#3A3A" +
                             "3C;\"><b>灰色</b>：该字母不存在于答案单词中</div></html></html>", "怎么玩", JOptionPane.PLAIN_MESSAGE);
-        });
+        }));
 
         return how_to;
     }
