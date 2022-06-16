@@ -8,7 +8,7 @@
 ## <span id="intro">Introduction</span>
 使用Java语言编写，图形界面由Java Swing构建。
 
-<img src="src/Resources/example.png" width="350">
+<img src="src/Resources/example_1.png" width="350">
 
 在六次机会内猜中所给的由五个字母组成的单词，包含数据统计功能。
 
