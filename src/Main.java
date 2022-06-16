@@ -14,6 +14,7 @@ public class Main {
         } else {
             JOptionPane.showMessageDialog(null, "请打开数据库！", "警告",
                     JOptionPane.PLAIN_MESSAGE);
+            System.exit(0);
         }
 
     }
