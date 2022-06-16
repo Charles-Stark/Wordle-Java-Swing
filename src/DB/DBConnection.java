@@ -26,17 +26,19 @@ public class DBConnection {
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
 
-    public void getConnection() {
+    public boolean getConnection() {
         // 获取数据库连接
         try {
             conn = DriverManager.getConnection(url, user, pwd);
             if (!conn.isClosed()) {
                 System.out.println("数据库连接成功");
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("数据库连接失败");
         }
+        return false;
     }
 
     public ResultSet select(String sql, Object[] objs) {
